@@ -13,16 +13,18 @@ prev.onclick=prevSlide;
 next.onclick=nextSlide;
 //next and prev functions
 function prevSlide(){
-    if(prev.classList.contains("disabled")){
-        //do nothing
+    if( currentslide==1){
+       currentslide=slidecounter;
+       checker();
     }else{
         currentslide--;
         checker();
     }
 }
 function nextSlide(){
-    if(next.classList.contains("disabled")){
-        //do nothing
+    if(currentslide==slidecounter){
+        currentslide=1;
+       checker();
     }else{
         currentslide++;
         checker();
@@ -53,18 +55,6 @@ function checker(){
     slidenumber.textContent=`slide ${currentslide} of ${slidecounter}`;
     slideitems[currentslide-1].classList.add("active");
     pagenationElement.children[currentslide-1].classList.add("active");
-    //check if first image
-    if(currentslide == 1){
-        prev.classList.add("disabled");
-    }else{
-        prev.classList.remove("disabled");
-    }
-    //check if last image
-    if(currentslide == slidecounter){
-        next.classList.add("disabled");
-    }else{
-        next.classList.remove("disabled");
-    }
 }
 console.log(pagenationBullets);
 // create remove function

@@ -75,11 +75,11 @@ body {
   line-height: 28px;
   cursor: pointer;
 }
-.slide-controls .prev.disabled,
+/* .slide-controls .prev.disabled,
 .slide-controls .next.disabled {
   background-color:#752a7599;
   cursor: no-drop;
-}
+} */
 .slide-controls .indicators ul li.active {
   background-color: #752a75;
   color: #FFF;
